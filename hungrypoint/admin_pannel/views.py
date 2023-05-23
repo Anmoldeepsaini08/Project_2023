@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Items,Book_table
+from .models import Items,Book_table,Contact_form,Sub
 # Create your views here.
 
 
@@ -45,5 +45,12 @@ def tables(request):
 
 def contact(request):
 
+    details = Contact_form.objects.all()
+    return render(request,'contact.html',{'details':details})
 
-    return render(request,'contact.html')
+
+def subscribe(request):
+
+    sub = Sub.objects.all()
+
+    return render(request,'subscriber.html',{'sub':sub})

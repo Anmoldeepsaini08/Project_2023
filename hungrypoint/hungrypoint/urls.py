@@ -12,7 +12,6 @@ urlpatterns = [
     path('booktable',views.table_book,name='booktable'),
     path('contactform',views.contact_form,name='contactform'),
     
-
     path('admin/',include('admin_pannel.urls'))
 
 

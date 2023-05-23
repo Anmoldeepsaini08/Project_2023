@@ -11,6 +11,7 @@ urlpatterns = [
     path('manage',views.manage,name='manage'),
     path('tables',views.tables,name='tables'),
     path('contact',views.contact,name='contact'),
+    path('subscriber',views.subscribe,name='subscriber'),
 
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

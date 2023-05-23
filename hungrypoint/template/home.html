@@ -4,9 +4,25 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<title>Hungry Point</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Hungry Point</title>
+
+<script>
+  window.scroll({
+  top: 0, 
+  left: 0, 
+  behavior: 'smooth'
+});
+</script>
+
 </head>
 <style >
 	
@@ -25,8 +41,90 @@
 }
 
 
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #212121;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: #e8e8e8;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content .heading {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.content .para {
+  line-height: 1.5;
+}
+
+.content .btn {
+  color: #e8e8e8;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: none;
+}
+
+.card:hover .btn {
+  color: #212121;
+  background: #e8e8e8;
+}
+
+.content .btn:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.content .btn:active {
+  box-shadow: none;
+}
+
+
 </style>
 <body>
+
+
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -63,7 +161,127 @@
   </div>
 </nav>
 
+<div class="container_1" style="display: flex; ">
+<img src="/static/Chef.gif">
+
+<h4 style="word-break: keep-all;margin-top: 15%;"><b>Hungry Point</b> are known for their diverse menu offerings, which often include a range of cuisines and dishes of different tastes and preferences, offering the authentic indian food and many more food items.</h4>
+
+</div>
+
+<br>
+<h2 style="margin-left: 5%;border-bottom: 1px solid black;width: 20%;">Special Events</h2>
+<br><br>
+<div class="container_2" style="display: flex;justify-content: space-between;width: 90%;margin-left: 5%;">
+
+   
+    <div class="card">
+        <div class="content">
+          <p class="heading">Meetings
+          </p><p class="para">
+            You can also impress your boss by choosing the best place for corporate party with your co-workers. Reserve a spacious room, set the menu, choose the drinks and invite guests
+          </p>
+        <a href="{%url 'booktable' %}"> <button class="btn">Book Table</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <p class="heading">Birthday's
+          </p><p class="para">
+            Book a table for two with the best dishes served for these special events or reserve a bigger one for a huge family to get together and Gather your friends together
+          </p>
+          <a href="{%url 'booktable' %}"> <button class="btn">Book Table</button></a>
+        </div>
+      </div>
 
 
+      <div class="card">
+        <div class="content">
+          <p class="heading">Weedings
+          </p><p class="para">
+            75 seats for 75 guests are all at your disposal. Organize a party for a huge company and have fun in the restauran. Show your friends the real world of Indian cuisine and especially Indian vibes
+          </p>
+          <a href="{%url 'booktable' %}"> <button class="btn">Book Table</button></a>
+        </div>
+      </div>
+</div>
+
+<br><br>
+
+
+<h2 style="margin-left: 5%;border-bottom: 1px solid black;width: 20%;">Today's Special</h2>
+<div class="container_3" style="margin-top: 4%;margin-bottom: 5%;width: 75%;margin-left: 15%;">
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/img_3.jpg" class="d-block w-100" alt="..." width="200" height="350">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img_2.jpg" class="d-block w-100" alt="..." width="200" height="350">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img_1.jpg" class="d-block w-100" alt="..." width="200" height="350">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+
+
+<div class="container_4">
+
+    <h2 style="margin-left: 5%;border-bottom: 1px solid black;width: 20%;">Subscribe:</h2>
+    <br>
+    <h5 style="margin-left: 5%;">Enter your email to get latest menu updates</h5>
+
+    <form  method="post" action=""  style="margin-left: 10%;">
+        {% csrf_token %}
+    
+      <br>
+      <input type="text"  name="sub" autofocus placeholder="Subscribe" style="padding-right: 50%;border-radius: 10px;padding-bottom: 1%;padding-top: 1%;">
+      <input type="submit" value="Submit" id="submit" style="border-radius: 10px;padding-bottom: 1%;padding-top: 1%;margin-left: 3%;padding-right: 10%;text-align: center;background-color: #212121;color: white;">
+
+      </form>
+
+</div>
+
+<br><br>
+
+
+
+    <footer class="text-center text-lg-start" style="background-color: #db6930;">
+      <div class="container d-flex justify-content-center py-5">
+        <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+          <i class="fab fa-youtube"></i>
+        </button>
+        <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+          <i class="fab fa-instagram"></i>
+        </button>
+        <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+          <i class="fab fa-twitter"></i>
+        </button>
+      </div>
+  
+      <!-- Copyright -->
+      <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Design and Developed By:
+        <a class="text-white" href="">Yogita</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
+
+  <!-- End of .container -->
 </body>
 </html>

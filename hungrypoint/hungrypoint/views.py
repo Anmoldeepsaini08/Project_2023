@@ -1,7 +1,15 @@
 from django.shortcuts import render,redirect
-from admin_pannel.models import Users,Items,Book_table
+from admin_pannel.models import Items,Book_table,Contact_form,Sub
+
 
 def index(request):
+    if request.method == 'POST':
+        sub = Sub()
+
+        sub.user_email  = request.POST.get('sub')
+        sub.subscribed = 'Yes'
+
+        sub.save()
     
 
     return render(request,'home.html')
@@ -34,5 +42,17 @@ def table_book(request):
 
 
 def contact_form(request):
+    if request.method == 'POST':
+
+        c_form = Contact_form()
+
+        c_form.user_name= request.POST.get('name')
+        c_form.user_email = request.POST.get('email')
+        c_form.subject = request.POST.get('subject')
+        c_form.message = request.POST.get('message')
+
+
+
+        c_form.save()
 
     return render(request,'contact_form.html')

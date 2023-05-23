@@ -28,3 +28,17 @@ class Book_table(models.Model):
     people = models.IntegerField(default='')
 
 
+
+class Contact_form(models.Model):
+    user_name = models.CharField(max_length=20)
+    user_email = models.CharField(max_length=20)
+    subject= models.CharField(max_length=20)
+    message = models.CharField(max_length=230)
+
+class Sub(models.Model):
+
+    user_email = models.CharField(max_length=20)
+    subscribed = models.CharField(max_length=5)
+    
+
+
